@@ -1,0 +1,26 @@
+{
+  "name": "etherwallet",
+  "version": "1.0.0",
+  "description": "This is a wallet api flesh base on the ethers.js package builds by L4 Media Richard Moore",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dagogodboss/etherwallet.git"
+  },
+  "keywords": [
+    "Ethereum",
+    "wallet",
+    "send",
+    "recieve",
+    "erc20"
+  ],
+  "author": "Ilamini Dagogo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dagogodboss/etherwallet/issues"
+  },
+  "homepage": "https://github.com/dagogodboss/etherwallet#readme"
+}

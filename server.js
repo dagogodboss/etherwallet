@@ -39,7 +39,7 @@ var app = express();
 	})
 
 	app.get('/send-token', function(req, res){
-		
+		res.send('hello');
 	});
 
 	app.listen(3000, function() {

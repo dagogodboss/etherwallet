@@ -15,6 +15,9 @@
     "ethers": "^2.2.0",
     "express": "^4.16.2"
   },
+  "engines": {
+    "node": "7.10.0"
+  },
   "keywords": [
     "Ethereum",
     "wallet",

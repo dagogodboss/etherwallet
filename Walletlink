@@ -5,6 +5,9 @@ mnemonic	"educate rhythm fee bag rent train crack depend believe fog squeeze hin
 path	"m/44'/60'/0'/0/0"
 
 
-localhost:3000/send-ether/0x8a7f14673df6fde1fec734f9626e7d6761704a02404f092b609c75eec0401591/2/0x06Ae947Db37C62F545dedF844D3c91721c38613A
+
+localhost:3000/send-ether/0x5397b6ebcfccf67218af337dff6ac835ac405844564897b2888b8b1be4fd6760/0.0002/0x7F27915831d6116EB55F2eEbcBA792Ca53009eFe
 
 localhost:3000/get-add/0x8a7f14673df6fde1fec734f9626e7d6761704a02404f092b609c75eec0401591/
+
+0x06Ae947Db37C62F545dedF844D3c91721c38613A

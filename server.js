@@ -80,11 +80,28 @@ var port = process.env.PORT || 3000;
 		});
 	});
 
-	app.get('/send-token/', function(req, res){
-		var abi = require('./abi.json'), add = '0x28abc25b4d4530720b99e051e79899642c3291e3', provider = ether.providers.getDefaultProvider();
+	app.get('/gas', function(req, res){
+		provider = ether.providers.getDefaultProvider();
+		provider.getGasPrice().then(function(gasPrice) {
+		    // gasPrice is a BigNumber; convert it to a decimal string
+		    gasPriceString = gasPrice.toString();
 
-		var contract = new ether.Contract(add, abi, provider);
-		var callPromise = contract.functions.transfer("0x06Ae947Db37C62F545dedF844D3c91721c38613A", "5000");
+		    console.log("Current gas price: " + gasPriceString);
+		    res.json(gasPriceString)
+		});
+	});
+
+	app.get('/send-token/', function(req, res){
+		var abi = require('./abi.json'), 
+			add = '0x28abc25b4d4530720b99e051e79899642c3291e3', 
+			provider = ether.providers.getDefaultProvider();
+			signer = new ether.Wallet("0x5397b6ebcfccf67218af337dff6ac835ac405844564897b2888b8b1be4fd6760", provider);
+		var contract = new ether.Contract(add, abi, signer);
+		var options = {
+		    gasPrice: 1100000000, // 1.1Gwei
+		    gasLimit: 250000 // Should be enough for more transfer transactions
+		};
+		var callPromise = contract.transfer("0x06Ae947Db37C62F545dedF844D3c91721c38613A", "5000", options);
 		callPromise.then(function(obj){
 			res.send(obj)
 		})

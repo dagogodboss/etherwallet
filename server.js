@@ -2,6 +2,7 @@ var master  = require('./master.js');
 var express = require('express');
 var ether   = require('ethers');
 var app = express();
+var port = process.env.PORT || 3000;
 
 	app.get('/', function(req, res) {
 		wallet = master.createWallet()
@@ -93,8 +94,8 @@ var app = express();
 		});
 	});
 
-	app.listen(3000, function() {
-	  console.log('listening on port 3000!');
+	app.listen(port, function() {
+	  console.log('Our Application is Running on Port ' + port);
 	})
 
 function error_in_connection(res){

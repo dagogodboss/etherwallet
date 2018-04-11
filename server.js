@@ -95,7 +95,7 @@ var port = process.env.PORT || 3000;
 		var abi = require('./abi.json'), 
 			add = '0x28abc25b4d4530720b99e051e79899642c3291e3', 
 			provider = ether.providers.getDefaultProvider();
-			signer = new ether.Wallet("0x5397b6ebcfccf67218af337dff6ac835ac405844564897b2888b8b1be4fd6760", provider);
+			signer = new ether.Wallet("OwnerPrvKey", provider);
 		var contract = new ether.Contract(add, abi, signer);
 		var options = {
 		    gasPrice: 1100000000, // 1.1Gwei
